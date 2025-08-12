@@ -1,0 +1,580 @@
+/* General Body and HTML Styling */
+body {
+    font-family: 'Arial', sans-serif; /* Changed to a more common sans-serif font, can be updated */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header/Navigation Bar Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 15px 0; /* Adjusted padding */
+    min-height: 60px; /* Adjusted min-height */
+    border-bottom: #77aaff 3px solid;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Added subtle shadow */
+}
+
+header .header-content { /* Targeted specific header content div */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Use 100% within the .container */
+    margin: auto;
+    padding: 0; /* Removed padding here as container handles it */
+}
+
+header .logo a { /* Specific styling for logo link */
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 24px; /* Larger font for logo */
+    font-weight: bold;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0; /* Removed default margin */
+}
+
+header nav li {
+    display: inline;
+    padding: 0 15px;
+}
+
+header nav a { /* Styling for navigation links */
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+header nav a:hover {
+    color: #77aaff;
+    font-weight: bold;
+}
+
+/* Sections Styling */
+section {
+    padding: 60px 0; /* Increased padding for sections */
+    margin-bottom: 20px;
+    background: #fff;
+    border-bottom: #ccc 1px solid;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Added subtle shadow to sections */
+    border-radius: 8px; /* Rounded corners for sections */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%; /* Constrain section width slightly */
+}
+
+section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 30px; /* Increased margin-bottom */
+    color: #333;
+}
+
+h2 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #77aaff; /* Underline for section titles */
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Landing Page Specific Styling */
+#home {
+    background: linear-gradient(to right, #e2e2e2, #f4f4f4); /* Subtle gradient */
+    padding: 80px 0; /* Increased padding */
+    text-align: center;
+    border-radius: 0; /* No rounded corners for home section */
+    box-shadow: none; /* No shadow for home section */
+}
+
+#home .home-content { /* Flex container for image and text */
+    display: flex;
+    flex-direction: column; /* Default to column for mobile first */
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Gap between image and text */
+    padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+    #home .home-content {
+        flex-direction: row; /* Row for larger screens */
+        text-align: left; /* Align text to left on larger screens */
+    }
+    #home .home-text {
+        order: 1; /* Text on the right */
+        flex: 1;
+    }
+    #home .home-image {
+        order: 2; /* Image on the left */
+        flex: 1;
+    }
+}
+
+#home .home-text {
+    margin-bottom: 30px; /* Margin for text container */
+}
+
+#home .home-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular photo */
+    border: 5px solid #77aaff; /* Border around photo */
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow for photo */
+}
+
+#home h1 {
+    font-size: 3.5em; /* Larger font size */
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center; /* Keep h1 centered */
+}
+
+@media (min-width: 768px) {
+    #home h1 {
+        text-align: left; /* Align h1 to left on larger screens */
+    }
+}
+
+#home p {
+    font-size: 1.3em; /* Larger font size */
+    margin-bottom: 30px;
+    color: #555;
+    text-align: center; /* Keep p centered */
+}
+
+@media (min-width: 768px) {
+    #home p {
+        text-align: left; /* Align p to left on larger screens */
+    }
+}
+
+#home .social-links a { /* Social media links */
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 18px; /* Slightly larger padding */
+    background: #555;
+    color: #fff;
+    border-radius: 50%; /* Circular buttons */
+    font-size: 1.5em; /* Larger icons */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#home .social-links a:hover {
+    background: #77aaff;
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Services Section Specific Styling */
+#services .services-grid { /* Grid container for service cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+    gap: 30px; /* Increased gap */
+    padding: 20px;
+}
+
+#services .service-card { /* Individual service card */
+    border: 1px solid #ddd;
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    border-radius: 10px; /* More rounded corners */
+    background: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Added shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#services .service-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+#services .service-icon { /* Icon placeholder */
+    font-size: 3em; /* Larger icon size */
+    margin-bottom: 15px;
+    color: #77aaff; /* Icon color */
+}
+
+#services .service-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* About Me Section Specific Styling */
+#about .about-content { /* Flex container for photo and text */
+    display: flex;
+    flex-direction: column; /* Default to column for mobile first */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+@media (min-width: 768px) {
+    #about .about-content {
+        flex-direction: row; /* Row for larger screens */
+        text-align: left;
+    }
+    #about .about-image {
+        order: 1; /* Image on the left */
+        flex: 1;
+        min-width: 250px;
+        text-align: center;
+    }
+    #about .about-text {
+        order: 2; /* Text on the right */
+        flex: 2;
+        min-width: 300px;
+    }
+}
+
+#about .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Shadow for photo */
+}
+
+#about .about-text h2 {
+    text-align: left; /* Align h2 to left */
+    border-bottom: none; /* Remove underline for h2 in about section */
+    margin-bottom: 20px;
+}
+
+#about .about-text p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+#about .download-cv-btn { /* Download CV button */
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    padding: 12px 25px; /* Adjusted padding */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* Adjusted margin */
+    margin-bottom: 30px; /* Increased margin-bottom */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#about .download-cv-btn:hover {
+    background: #77aaff;
+    transform: translateY(-3px);
+}
+
+#about .skills-container { /* Skills container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start; /* Align skills to start */
+    margin-top: 20px;
+}
+
+#about .skill-tag { /* Individual skill */
+    background: #eee;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #555;
+    border: 1px solid #ddd;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#about .skill-tag:hover {
+    background: #77aaff;
+    color: #fff;
+}
+
+/* Portfolio Section Specific Styling */
+#portfolio .filter-buttons { /* Filter buttons container */
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin */
+}
+
+#portfolio button {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px; /* More rounded buttons */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#portfolio button:hover,
+#portfolio button.active {
+    background: #77aaff;
+    color: #fff;
+    border-color: #77aaff;
+}
+
+#portfolio .portfolio-grid { /* Grid container for portfolio items */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
+    gap: 30px; /* Increased gap */
+    padding: 20px;
+}
+
+#portfolio .portfolio-item { /* Individual portfolio item */
+    border: 1px solid #ddd;
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    border-radius: 10px; /* More rounded corners */
+    background: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Added shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#portfolio .portfolio-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+#portfolio .project-icon { /* Project icon placeholder */
+    font-size: 3em; /* Larger icon size */
+    margin-bottom: 15px;
+    color: #77aaff; /* Icon color */
+}
+
+#portfolio .portfolio-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#portfolio .portfolio-item p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* Contact Me Section Specific Styling */
+#contact .contact-form { /* Form container */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax */
+    gap: 25px; /* Adjusted gap */
+    max-width: 900px; /* Increased max-width */
+    margin: 0 auto 40px auto; /* Increased margin-bottom */
+    padding: 30px; /* Increased padding */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* More rounded corners */
+    background: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Added shadow */
+}
+
+#contact .contact-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .contact-form .full-width { /* For textarea to span full width */
+    grid-column: 1 / -1;
+}
+
+#contact label {
+    margin-bottom: 8px; /* Adjusted margin */
+    font-weight: bold;
+    color: #333;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact select,
+#contact textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #fff;
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 120px; /* Minimum height for textarea */
+}
+
+#contact button[type="submit"] {
+    grid-column: 1 / -1;
+    background: #555;
+    color: #fff;
+    padding: 15px 25px; /* Increased padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em; /* Larger font size */
+    margin-top: 20px; /* Increased margin-top */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#contact button[type="submit"]:hover {
+    background: #77aaff;
+    transform: translateY(-3px);
+}
+
+#contact .contact-info-bottom { /* Contact info, social media, CV container */
+    text-align: center;
+    margin-top: 40px; /* Increased margin-top */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#contact .contact-info-bottom p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+#contact .social-links-bottom a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 18px;
+    background: #555;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#contact .social-links-bottom a:hover {
+    background: #77aaff;
+    transform: translateY(-5px);
+}
+
+#contact .download-cv-btn { /* Download CV button at bottom */
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Adjusted margin-top */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#contact .download-cv-btn:hover {
+    background: #77aaff;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    header .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav li {
+        padding: 5px 10px;
+    }
+
+    #home h1 {
+        font-size: 2.5em;
+    }
+
+    #home p {
+        font-size: 1.1em;
+    }
+
+    #services .services-grid,
+    #portfolio .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .about-text h2 {
+        text-align: center;
+    }
+
+    #about .skills-container {
+        justify-content: center;
+    }
+
+    #contact .contact-form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    #contact .contact-form .full-width {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    #home .social-links a {
+        font-size: 1.2em;
+        padding: 10px 15px;
+    }
+
+    #services .service-icon,
+    #portfolio .project-icon {
+        font-size: 2.5em;
+    }
+
+    #portfolio button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    #contact button[type="submit"] {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
